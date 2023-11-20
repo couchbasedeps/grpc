@@ -18,10 +18,24 @@
 
 #include "src/core/ext/filters/client_channel/resolver/xds/xds_config.h"
 
+#include <stddef.h>
+
+#include <algorithm>
+#include <optional>
+#include <type_traits>
+#include <utility>
+
+#include "absl/strings/str_cat.h"
 #include "absl/strings/str_join.h"
+#include "absl/types/variant.h"
+
+#include <grpc/support/log.h>
 
 #include "src/core/ext/filters/client_channel/resolver/xds/xds_resolver_trace.h"
+#include "src/core/ext/xds/xds_client_stats.h"
 #include "src/core/ext/xds/xds_routing.h"
+#include "src/core/lib/debug/trace.h"
+#include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/match.h"
 
 namespace grpc_core {
