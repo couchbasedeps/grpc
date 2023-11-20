@@ -2182,7 +2182,6 @@ grpc_cc_library(
         "grpc_base",
         "grpcpp_backend_metric_recorder",
         "protobuf_duration_upb",
-        "ref_counted_ptr",
         "xds_orca_service_upb",
         "xds_orca_upb",
         "//src/core:default_event_engine",
