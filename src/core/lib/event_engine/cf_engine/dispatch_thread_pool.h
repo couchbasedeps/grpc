@@ -25,9 +25,10 @@
 #include <AvailabilityMacros.h>
 #ifdef AVAILABLE_MAC_OS_X_VERSION_10_12_AND_LATER
 
+#include <dispatch/dispatch.h>
+
 #include <atomic>
 #include <cstddef>
-#include <dispatch/dispatch.h>
 
 #include "src/core/lib/event_engine/thread_pool/thread_pool.h"
 
