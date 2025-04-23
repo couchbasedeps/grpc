@@ -1336,6 +1336,8 @@ let package = Package(
         "src/core/lib/event_engine/posix_engine/posix_engine_listener.h",
         "src/core/lib/event_engine/posix_engine/posix_engine_listener_utils.cc",
         "src/core/lib/event_engine/posix_engine/posix_engine_listener_utils.h",
+        "src/core/lib/event_engine/posix_engine/set_socket_dualstack.cc",
+        "src/core/lib/event_engine/posix_engine/set_socket_dualstack.google.cc",
         "src/core/lib/event_engine/posix_engine/tcp_socket_utils.cc",
         "src/core/lib/event_engine/posix_engine/tcp_socket_utils.h",
         "src/core/lib/event_engine/posix_engine/timer.cc",
