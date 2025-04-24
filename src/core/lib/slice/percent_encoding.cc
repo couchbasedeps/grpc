@@ -24,8 +24,8 @@
 #include <cstdint>
 #include <utility>
 
-#include "src/core/util/bitset.h"
 #include "absl/log/check.h"
+#include "src/core/util/bitset.h"
 
 namespace grpc_core {
 

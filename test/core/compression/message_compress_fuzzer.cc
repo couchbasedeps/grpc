@@ -25,8 +25,8 @@
 #include <cstdint>
 #include <vector>
 
-#include "src/core/lib/compression/message_compress.h"
 #include "fuzztest/fuzztest.h"
+#include "src/core/lib/compression/message_compress.h"
 
 using fuzztest::Arbitrary;
 using fuzztest::ElementOf;

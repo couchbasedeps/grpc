@@ -29,6 +29,7 @@
 
 #include <string>
 
+#include "absl/strings/str_format.h"
 #include "src/core/lib/address_utils/sockaddr_utils.h"
 #include "src/core/lib/event_engine/default_event_engine.h"
 #include "src/core/lib/iomgr/block_annotate.h"
@@ -43,7 +44,6 @@
 #include "src/core/util/host_port.h"
 #include "src/core/util/string.h"
 #include "src/core/util/thd.h"
-#include "absl/strings/str_format.h"
 
 namespace grpc_core {
 namespace {

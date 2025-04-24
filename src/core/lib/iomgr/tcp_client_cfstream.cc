@@ -30,6 +30,7 @@
 #include <netinet/in.h>
 #include <string.h>
 
+#include "absl/log/log.h"
 #include "src/core/lib/address_utils/sockaddr_utils.h"
 #include "src/core/lib/event_engine/shim.h"
 #include "src/core/lib/iomgr/cfstream_handle.h"
@@ -42,7 +43,6 @@
 #include "src/core/lib/iomgr/timer.h"
 #include "src/core/util/crash.h"
 #include "src/core/util/host_port.h"
-#include "absl/log/log.h"
 
 struct CFStreamConnect {
   gpr_mu mu;

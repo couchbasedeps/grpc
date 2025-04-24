@@ -23,6 +23,9 @@
 #include <string>
 #include <utility>
 
+#include "absl/status/status.h"
+#include "absl/status/statusor.h"
+#include "absl/strings/str_cat.h"
 #include "src/core/config/core_configuration.h"
 #include "src/core/lib/slice/slice.h"
 #include "src/core/lib/slice/slice_internal.h"
@@ -34,9 +37,6 @@
 #include "src/core/util/json/json_writer.h"
 #include "src/core/util/memory.h"
 #include "src/core/util/validation_errors.h"
-#include "absl/status/status.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/str_cat.h"
 
 namespace grpc_core {
 

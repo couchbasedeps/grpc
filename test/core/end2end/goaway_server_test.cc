@@ -33,6 +33,12 @@
 #include <string>
 #include <vector>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "absl/status/status.h"
+#include "absl/status/statusor.h"
+#include "absl/strings/str_cat.h"
+#include "absl/strings/string_view.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/iomgr/sockaddr.h"
 #include "src/core/lib/iomgr/socket_utils.h"
@@ -40,12 +46,6 @@
 #include "test/core/event_engine/util/delegating_event_engine.h"
 #include "test/core/test_util/port.h"
 #include "test/core/test_util/test_config.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
-#include "absl/status/status.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/str_cat.h"
-#include "absl/strings/string_view.h"
 
 static gpr_mu g_mu;
 static int g_resolve_port = -1;

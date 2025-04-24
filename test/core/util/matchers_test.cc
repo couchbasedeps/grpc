@@ -14,8 +14,8 @@
 
 #include "src/core/util/matchers.h"
 
-#include "gtest/gtest.h"
 #include "absl/status/status.h"
+#include "gtest/gtest.h"
 
 namespace grpc_core {
 

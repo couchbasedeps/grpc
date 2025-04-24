@@ -22,6 +22,7 @@
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 
+#include "gtest/gtest.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/tsi/alts/handshaker/alts_shared_resource.h"
 #include "src/core/tsi/alts/handshaker/alts_tsi_handshaker.h"
@@ -31,7 +32,6 @@
 #include "src/core/util/env.h"
 #include "test/core/test_util/test_config.h"
 #include "test/core/tsi/alts/handshaker/alts_handshaker_service_api_test_lib.h"
-#include "gtest/gtest.h"
 #include "upb/mem/arena.hpp"
 
 #define ALTS_HANDSHAKER_CLIENT_TEST_OUT_FRAME "Hello Google"

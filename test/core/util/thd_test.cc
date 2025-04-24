@@ -25,8 +25,8 @@
 
 #include <atomic>
 
-#include "test/core/test_util/test_config.h"
 #include "gtest/gtest.h"
+#include "test/core/test_util/test_config.h"
 
 #define NUM_THREADS 100
 

@@ -25,7 +25,6 @@
 #include <utility>
 #include <vector>
 
-#include "src/core/load_balancing/lb_policy.h"
 #include "absl/log/check.h"
 #include "absl/log/log.h"
 #include "absl/status/status.h"
@@ -33,6 +32,7 @@
 #include "absl/strings/str_format.h"
 #include "absl/strings/str_join.h"
 #include "absl/strings/string_view.h"
+#include "src/core/load_balancing/lb_policy.h"
 
 namespace grpc_core {
 

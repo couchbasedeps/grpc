@@ -21,6 +21,11 @@
 
 #include <utility>
 
+#include "absl/functional/any_invocable.h"
+#include "absl/log/check.h"
+#include "absl/status/status.h"
+#include "absl/status/statusor.h"
+#include "gtest/gtest.h"
 #include "src/core/channelz/channelz.h"
 #include "src/core/config/core_configuration.h"
 #include "src/core/ext/transport/chttp2/transport/chttp2_transport.h"
@@ -38,11 +43,6 @@
 #include "src/core/server/server.h"
 #include "src/core/util/ref_counted_ptr.h"
 #include "test/core/end2end/end2end_tests.h"
-#include "gtest/gtest.h"
-#include "absl/functional/any_invocable.h"
-#include "absl/log/check.h"
-#include "absl/status/status.h"
-#include "absl/status/statusor.h"
 
 namespace grpc_core {
 

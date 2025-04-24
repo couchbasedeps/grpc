@@ -26,6 +26,8 @@
 #include <optional>
 #include <string>
 
+#include "absl/status/status.h"
+#include "absl/strings/string_view.h"
 #include "src/core/call/message.h"
 #include "src/core/call/metadata_batch.h"
 #include "src/core/lib/channel/channel_args.h"
@@ -36,8 +38,6 @@
 #include "src/core/lib/transport/call_final_info.h"
 #include "src/core/telemetry/tcp_tracer.h"
 #include "src/core/util/ref_counted_string.h"
-#include "absl/status/status.h"
-#include "absl/strings/string_view.h"
 
 namespace grpc_core {
 

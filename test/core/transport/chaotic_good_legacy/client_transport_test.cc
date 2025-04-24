@@ -31,6 +31,11 @@
 #include <tuple>
 #include <vector>
 
+#include "absl/functional/any_invocable.h"
+#include "absl/status/statusor.h"
+#include "absl/strings/str_format.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/call/metadata_batch.h"
 #include "src/core/config/core_configuration.h"
 #include "src/core/ext/transport/chaotic_good/chaotic_good_frame.pb.h"
@@ -41,11 +46,6 @@
 #include "src/core/lib/slice/slice_buffer.h"
 #include "test/core/transport/chaotic_good_legacy/transport_test.h"
 #include "test/core/transport/util/mock_promise_endpoint.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "absl/functional/any_invocable.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/str_format.h"
 
 using testing::MockFunction;
 using testing::Return;

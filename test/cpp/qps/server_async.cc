@@ -33,6 +33,7 @@
 #include <mutex>
 #include <thread>
 
+#include "absl/log/log.h"
 #include "src/core/lib/surface/completion_queue.h"
 #include "src/core/util/crash.h"
 #include "src/core/util/host_port.h"
@@ -40,7 +41,6 @@
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/qps/qps_server_builder.h"
 #include "test/cpp/qps/server.h"
-#include "absl/log/log.h"
 
 namespace grpc {
 namespace testing {

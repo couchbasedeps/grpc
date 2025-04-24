@@ -32,6 +32,9 @@
 #include <new>
 #include <optional>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "absl/strings/str_cat.h"
 #include "src/core/lib/event_engine/default_event_engine.h"
 #include "src/core/lib/experiments/config.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
@@ -43,9 +46,6 @@
 #include "src/core/util/crash.h"
 #include "src/core/util/useful.h"
 #include "test/core/end2end/fuzzers/api_fuzzer.pb.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
-#include "absl/strings/str_cat.h"
 
 namespace grpc_core {
 

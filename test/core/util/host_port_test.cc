@@ -18,8 +18,8 @@
 
 #include "src/core/util/host_port.h"
 
-#include "test/core/test_util/test_config.h"
 #include "gtest/gtest.h"
+#include "test/core/test_util/test_config.h"
 
 static void join_host_port_expect(const char* host, int port,
                                   const char* expected) {

@@ -20,8 +20,8 @@
 
 #include <memory>
 
-#include "gtest/gtest.h"
 #include "absl/log/log.h"
+#include "gtest/gtest.h"
 
 TEST(HistogramTest, NoOp) {
   grpc_histogram_destroy(grpc_histogram_create(0.01, 60e9));

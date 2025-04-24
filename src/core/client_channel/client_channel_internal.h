@@ -21,6 +21,8 @@
 
 #include <utility>
 
+#include "absl/functional/any_invocable.h"
+#include "absl/log/check.h"
 #include "src/core/call/call_destination.h"
 #include "src/core/lib/resource_quota/arena.h"
 #include "src/core/load_balancing/lb_policy.h"
@@ -28,8 +30,6 @@
 #include "src/core/telemetry/call_tracer.h"
 #include "src/core/util/down_cast.h"
 #include "src/core/util/unique_type_name.h"
-#include "absl/functional/any_invocable.h"
-#include "absl/log/check.h"
 
 //
 // This file contains internal interfaces used to allow various plugins

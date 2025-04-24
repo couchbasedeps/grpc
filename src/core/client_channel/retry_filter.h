@@ -27,6 +27,7 @@
 #include <new>
 #include <optional>
 
+#include "absl/log/check.h"
 #include "src/core/client_channel/client_channel_filter.h"
 #include "src/core/client_channel/retry_service_config.h"
 #include "src/core/client_channel/retry_throttle.h"
@@ -37,7 +38,6 @@
 #include "src/core/lib/transport/transport.h"
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/useful.h"
-#include "absl/log/check.h"
 
 namespace grpc_core {
 

@@ -37,6 +37,12 @@
 #include <string>
 #include <thread>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "absl/memory/memory.h"
+#include "absl/strings/str_cat.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/client_channel/backup_poller.h"
 #include "src/core/client_channel/global_subchannel_pool.h"
 #include "src/core/config/config_vars.h"
@@ -59,12 +65,6 @@
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/end2end/test_service_impl.h"
 #include "test/cpp/util/credentials.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
-#include "absl/memory/memory.h"
-#include "absl/strings/str_cat.h"
 
 namespace grpc {
 namespace testing {

@@ -36,6 +36,9 @@
 #include <thread>
 #include <vector>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "gtest/gtest.h"
 #include "src/core/config/config_vars.h"
 #include "src/core/ext/transport/chttp2/transport/flow_control.h"
 #include "src/core/lib/channel/channel_args.h"
@@ -43,9 +46,6 @@
 #include "src/core/util/sync.h"
 #include "test/core/test_util/port.h"
 #include "test/core/test_util/test_config.h"
-#include "gtest/gtest.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
 
 namespace {
 

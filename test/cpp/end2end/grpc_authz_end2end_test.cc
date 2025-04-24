@@ -22,6 +22,8 @@
 
 #include <memory>
 
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/credentials/transport/fake/fake_credentials.h"
 #include "src/core/lib/security/authorization/audit_logging.h"
 #include "src/core/lib/security/authorization/grpc_authorization_policy_provider.h"
@@ -33,19 +35,14 @@
 #include "test/core/test_util/test_config.h"
 #include "test/core/test_util/tls_utils.h"
 #include "test/cpp/end2end/test_service_impl.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
 
 namespace grpc {
 namespace testing {
 namespace {
 
-constexpr char kCaCertPath[] =
-    "src/core/tsi/test_creds/ca.pem";
-constexpr char kServerCertPath[] =
-    "src/core/tsi/test_creds/server1.pem";
-constexpr char kServerKeyPath[] =
-    "src/core/tsi/test_creds/server1.key";
+constexpr char kCaCertPath[] = "src/core/tsi/test_creds/ca.pem";
+constexpr char kServerCertPath[] = "src/core/tsi/test_creds/server1.pem";
+constexpr char kServerKeyPath[] = "src/core/tsi/test_creds/server1.key";
 constexpr char kClientCertPath[] =
     "src/core/tsi/test_creds/client-with-spiffe.pem";
 constexpr char kClientKeyPath[] =

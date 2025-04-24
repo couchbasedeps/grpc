@@ -32,6 +32,10 @@
 #include <utility>
 #include <variant>
 
+#include "absl/base/thread_annotations.h"
+#include "absl/container/flat_hash_map.h"
+#include "absl/random/random.h"
+#include "absl/status/status.h"
 #include "src/core/call/metadata_batch.h"  // IWYU pragma: keep
 #include "src/core/ext/transport/chaotic_good_legacy/chaotic_good_transport.h"
 #include "src/core/ext/transport/chaotic_good_legacy/config.h"
@@ -56,10 +60,6 @@
 #include "src/core/lib/transport/promise_endpoint.h"
 #include "src/core/lib/transport/transport.h"
 #include "src/core/util/sync.h"
-#include "absl/base/thread_annotations.h"
-#include "absl/container/flat_hash_map.h"
-#include "absl/random/random.h"
-#include "absl/status/status.h"
 
 namespace grpc_core {
 namespace chaotic_good_legacy {

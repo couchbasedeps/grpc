@@ -25,6 +25,8 @@
 
 #include <memory>
 
+#include "absl/status/status.h"
+#include "gtest/gtest.h"
 #include "src/core/lib/channel/channel_fwd.h"
 #include "src/core/lib/channel/channel_stack.h"
 #include "src/core/lib/experiments/experiments.h"
@@ -37,8 +39,6 @@
 #include "src/core/util/orphanable.h"
 #include "test/core/end2end/cq_verifier.h"
 #include "test/core/test_util/test_config.h"
-#include "gtest/gtest.h"
-#include "absl/status/status.h"
 
 class Watcher : public grpc_core::ConnectivityStateWatcherInterface {
  public:

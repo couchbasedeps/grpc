@@ -25,8 +25,8 @@
 #include <memory>
 #include <utility>
 
-#include "src/core/credentials/transport/tls/certificate_provider_factory.h"
 #include "absl/strings/string_view.h"
+#include "src/core/credentials/transport/tls/certificate_provider_factory.h"
 
 namespace grpc_core {
 

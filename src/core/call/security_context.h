@@ -27,6 +27,7 @@
 #include <memory>
 #include <utility>
 
+#include "absl/strings/string_view.h"
 #include "src/core/credentials/call/call_credentials.h"  // IWYU pragma: keep
 #include "src/core/lib/debug/trace.h"
 #include "src/core/lib/resource_quota/arena.h"
@@ -37,7 +38,6 @@
 #include "src/core/util/ref_counted.h"
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/useful.h"
-#include "absl/strings/string_view.h"
 
 // --- grpc_security_context_extension ---
 

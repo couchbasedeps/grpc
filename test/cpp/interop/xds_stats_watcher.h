@@ -34,10 +34,10 @@
 #include <unordered_set>
 #include <vector>
 
-#include "src/proto/grpc/testing/empty.pb.h"
-#include "src/proto/grpc/testing/messages.pb.h"
 #include "absl/status/status.h"
 #include "absl/types/span.h"
+#include "src/proto/grpc/testing/empty.pb.h"
+#include "src/proto/grpc/testing/messages.pb.h"
 
 namespace grpc {
 namespace testing {

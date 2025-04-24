@@ -19,8 +19,9 @@
 #ifndef GRPC_RB_CHANNEL_H_
 #define GRPC_RB_CHANNEL_H_
 
-#include <grpc/grpc.h>
 #include <ruby/ruby.h>
+
+#include <grpc/grpc.h>
 
 /* Initializes the Channel class. */
 void Init_grpc_channel();

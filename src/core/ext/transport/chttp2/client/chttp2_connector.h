@@ -24,6 +24,7 @@
 
 #include <optional>
 
+#include "absl/base/thread_annotations.h"
 #include "src/core/client_channel/connector.h"
 #include "src/core/handshaker/handshaker.h"
 #include "src/core/lib/iomgr/closure.h"
@@ -31,7 +32,6 @@
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/sync.h"
-#include "absl/base/thread_annotations.h"
 
 namespace grpc_core {
 

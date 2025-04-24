@@ -19,6 +19,8 @@
 
 #include <atomic>
 
+#include "absl/functional/any_invocable.h"
+#include "absl/log/check.h"
 #include "src/core/credentials/transport/channel_creds_registry.h"
 #include "src/core/credentials/transport/tls/certificate_provider_registry.h"
 #include "src/core/handshaker/handshaker_registry.h"
@@ -28,8 +30,6 @@
 #include "src/core/load_balancing/lb_policy_registry.h"
 #include "src/core/resolver/resolver_registry.h"
 #include "src/core/service_config/service_config_parser.h"
-#include "absl/functional/any_invocable.h"
-#include "absl/log/check.h"
 
 namespace grpc_core {
 

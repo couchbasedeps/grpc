@@ -17,6 +17,8 @@
 #include <memory>
 #include <string>
 
+#include "absl/strings/str_split.h"
+#include "absl/strings/string_view.h"
 #include "src/core/config/config_vars.h"
 #include "src/core/lib/event_engine/forkable.h"
 #include "src/core/lib/event_engine/posix_engine/ev_epoll1_linux.h"
@@ -24,8 +26,6 @@
 #include "src/core/lib/event_engine/posix_engine/event_poller.h"
 #include "src/core/lib/iomgr/port.h"
 #include "src/core/util/no_destruct.h"
-#include "absl/strings/str_split.h"
-#include "absl/strings/string_view.h"
 
 namespace grpc_event_engine::experimental {
 

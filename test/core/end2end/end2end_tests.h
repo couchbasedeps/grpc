@@ -40,6 +40,13 @@
 #include <variant>
 #include <vector>
 
+#include "absl/functional/any_invocable.h"
+#include "absl/log/check.h"
+#include "absl/memory/memory.h"
+#include "absl/meta/type_traits.h"
+#include "absl/strings/str_cat.h"
+#include "absl/strings/string_view.h"
+#include "gtest/gtest.h"
 #include "src/core/config/config_vars.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/slice/slice.h"
@@ -57,17 +64,10 @@
 #include "test/core/test_util/fuzz_config_vars.h"
 #include "test/core/test_util/postmortem.h"
 #include "test/core/test_util/test_config.h"
-#include "gtest/gtest.h"
-#include "absl/functional/any_invocable.h"
-#include "absl/log/check.h"
-#include "absl/memory/memory.h"
-#include "absl/meta/type_traits.h"
-#include "absl/strings/str_cat.h"
-#include "absl/strings/string_view.h"
 
 #ifdef GRPC_END2END_TEST_INCLUDE_FUZZER
-#include "test/core/test_util/fuzz_config_vars_helpers.h"
 #include "fuzztest/fuzztest.h"
+#include "test/core/test_util/fuzz_config_vars_helpers.h"
 #endif
 
 #define CA_CERT_PATH "src/core/tsi/test_creds/ca.pem"

@@ -35,6 +35,12 @@
 #include <string>
 #include <utility>
 
+#include "absl/base/attributes.h"
+#include "absl/functional/any_invocable.h"
+#include "absl/log/check.h"
+#include "absl/status/status.h"
+#include "absl/strings/str_cat.h"
+#include "absl/strings/string_view.h"
 #include "src/core/channelz/channelz.h"
 #include "src/core/config/core_configuration.h"
 #include "src/core/handshaker/handshaker.h"
@@ -58,12 +64,6 @@
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/sync.h"
 #include "src/core/util/unique_type_name.h"
-#include "absl/base/attributes.h"
-#include "absl/functional/any_invocable.h"
-#include "absl/log/check.h"
-#include "absl/status/status.h"
-#include "absl/strings/str_cat.h"
-#include "absl/strings/string_view.h"
 
 #define GRPC_INITIAL_HANDSHAKE_BUFFER_SIZE 256
 

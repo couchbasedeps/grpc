@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "absl/flags/flag.h"
+#include "absl/log/log.h"
 #include "src/core/lib/slice/slice_internal.h"
 #include "src/core/telemetry/stats.h"
 #include "src/core/telemetry/stats_data.h"
@@ -23,8 +25,6 @@
 #include "test/cpp/qps/parse_json.h"
 #include "test/cpp/util/test_config.h"
 #include "test/cpp/util/test_credentials_provider.h"
-#include "absl/flags/flag.h"
-#include "absl/log/log.h"
 
 ABSL_FLAG(std::string, loadtest_config, "",
           "Path to a gRPC benchmark loadtest scenario JSON file. See "

@@ -24,6 +24,10 @@
 #include <utility>
 #include <vector>
 
+#include "absl/status/statusor.h"
+#include "absl/strings/str_cat.h"
+#include "absl/time/time.h"
+#include "gtest/gtest.h"
 #include "src/core/credentials/transport/fake/fake_credentials.h"
 #include "src/core/lib/event_engine/tcp_socket_utils.h"
 #include "src/core/lib/experiments/config.h"
@@ -33,10 +37,6 @@
 #include "test/core/test_util/port.h"
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/util/credentials.h"
-#include "gtest/gtest.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/str_cat.h"
-#include "absl/time/time.h"
 
 // IWYU pragma: no_include <sys/socket.h>
 
