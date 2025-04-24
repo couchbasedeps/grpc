@@ -22,9 +22,9 @@
 #include <memory>
 #include <utility>
 
-#include "src/core/lib/slice/slice.h"
-#include "gtest/gtest.h"
 #include "absl/log/check.h"
+#include "gtest/gtest.h"
+#include "src/core/lib/slice/slice.h"
 
 using ::grpc_core::Slice;
 using ::grpc_core::SliceBuffer;

@@ -19,8 +19,8 @@
 #include <memory>
 #include <optional>
 
-#include "src/core/util/crash.h"
 #include "absl/log/check.h"
+#include "src/core/util/crash.h"
 
 namespace grpc_core {
 

@@ -16,8 +16,8 @@
 
 #include <memory>
 
-#include "gtest/gtest.h"
 #include "absl/strings/str_cat.h"
+#include "gtest/gtest.h"
 
 using ::grpc_event_engine::experimental::EventEngine;
 

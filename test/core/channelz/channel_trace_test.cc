@@ -28,6 +28,9 @@
 #include <string>
 #include <thread>
 
+#include "absl/synchronization/notification.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/channelz/channelz.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
@@ -35,9 +38,6 @@
 #include "src/core/util/json/json_writer.h"
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/util/channel_trace_proto_helper.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "absl/synchronization/notification.h"
 
 namespace grpc_core {
 namespace channelz {

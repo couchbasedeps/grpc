@@ -20,8 +20,8 @@
 
 #include <cstdint>
 
-#include "src/core/util/bitset.h"
 #include "absl/status/statusor.h"
+#include "src/core/util/bitset.h"
 
 namespace grpc_core {
 namespace chaotic_good_legacy {

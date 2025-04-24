@@ -31,6 +31,8 @@
 #include <string>
 #include <utility>
 
+#include "absl/container/inlined_vector.h"
+#include "absl/status/statusor.h"
 #include "src/core/credentials/call/call_credentials.h"
 #include "src/core/credentials/call/call_creds_util.h"
 #include "src/core/lib/debug/trace.h"
@@ -43,8 +45,6 @@
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/unique_type_name.h"
 #include "src/core/util/useful.h"
-#include "absl/container/inlined_vector.h"
-#include "absl/status/statusor.h"
 
 // This type is forward declared as a C struct and we cannot define it as a
 // class. Otherwise, compiler will complain about type mismatch due to

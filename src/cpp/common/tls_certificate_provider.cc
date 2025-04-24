@@ -21,8 +21,8 @@
 #include <string>
 #include <vector>
 
-#include "src/core/credentials/transport/tls/grpc_tls_certificate_provider.h"
 #include "absl/log/check.h"
+#include "src/core/credentials/transport/tls/grpc_tls_certificate_provider.h"
 
 namespace grpc {
 namespace experimental {

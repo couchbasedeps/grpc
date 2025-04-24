@@ -27,6 +27,7 @@
 
 #include <vector>
 
+#include "absl/log/log.h"
 #include "src/core/util/crash.h"
 #include "src/proto/grpc/testing/control.pb.h"
 #include "src/proto/grpc/testing/messages.pb.h"
@@ -34,7 +35,6 @@
 #include "test/core/test_util/port.h"
 #include "test/cpp/qps/usage_timer.h"
 #include "test/cpp/util/test_credentials_provider.h"
-#include "absl/log/log.h"
 
 namespace grpc {
 namespace testing {

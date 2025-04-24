@@ -17,6 +17,8 @@
 
 #include <memory>
 
+#include "absl/log/absl_check.h"
+#include "absl/strings/string_view.h"
 #include "opentelemetry/sdk/metrics/meter_provider.h"
 #include "src/core/lib/event_engine/channel_args_endpoint_config.h"
 #include "src/core/telemetry/metrics.h"
@@ -24,8 +26,6 @@
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/microbenchmarks/helpers.h"
 #include "test/cpp/util/test_config.h"
-#include "absl/log/absl_check.h"
-#include "absl/strings/string_view.h"
 
 namespace {
 

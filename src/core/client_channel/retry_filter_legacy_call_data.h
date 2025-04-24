@@ -25,6 +25,8 @@
 #include <optional>
 #include <utility>
 
+#include "absl/container/inlined_vector.h"
+#include "absl/functional/any_invocable.h"
 #include "src/core/call/metadata_batch.h"
 #include "src/core/client_channel/client_channel_filter.h"
 #include "src/core/client_channel/retry_filter.h"
@@ -45,8 +47,6 @@
 #include "src/core/util/ref_counted.h"
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/time.h"
-#include "absl/container/inlined_vector.h"
-#include "absl/functional/any_invocable.h"
 
 namespace grpc_core {
 

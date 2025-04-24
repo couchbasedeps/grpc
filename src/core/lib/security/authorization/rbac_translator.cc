@@ -26,11 +26,6 @@
 #include <utility>
 #include <vector>
 
-#include "src/core/lib/security/authorization/audit_logging.h"
-#include "src/core/util/json/json.h"
-#include "src/core/util/json/json_reader.h"
-#include "src/core/util/matchers.h"
-#include "src/core/util/useful.h"
 #include "absl/log/check.h"
 #include "absl/status/status.h"
 #include "absl/status/statusor.h"
@@ -39,6 +34,11 @@
 #include "absl/strings/str_format.h"
 #include "absl/strings/string_view.h"
 #include "absl/strings/strip.h"
+#include "src/core/lib/security/authorization/audit_logging.h"
+#include "src/core/util/json/json.h"
+#include "src/core/util/json/json_reader.h"
+#include "src/core/util/matchers.h"
+#include "src/core/util/useful.h"
 
 namespace grpc_core {
 

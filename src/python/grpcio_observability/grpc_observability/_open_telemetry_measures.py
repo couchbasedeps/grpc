@@ -24,7 +24,7 @@ class Metric(
         ["name", "cyname", "unit", "description"],
     )
 ):
-  pass
+    pass
 
 
 CLIENT_ATTEMPT_STARTED = Metric(
@@ -85,15 +85,15 @@ SERVER_RPC_RECEIVED_BYTES = Metric(
 
 
 def base_metrics() -> List[Metric]:
-  return [
-      CLIENT_ATTEMPT_STARTED,
-      CLIENT_ATTEMPT_DURATION,
-      # CLIENT_RPC_DURATION is not required yet
-      # CLIENT_RPC_DURATION,
-      CLIENT_ATTEMPT_SEND_BYTES,
-      CLIENT_ATTEMPT_RECEIVED_BYTES,
-      SERVER_STARTED_RPCS,
-      SERVER_RPC_DURATION,
-      SERVER_RPC_SEND_BYTES,
-      SERVER_RPC_RECEIVED_BYTES,
-  ]
+    return [
+        CLIENT_ATTEMPT_STARTED,
+        CLIENT_ATTEMPT_DURATION,
+        # CLIENT_RPC_DURATION is not required yet
+        # CLIENT_RPC_DURATION,
+        CLIENT_ATTEMPT_SEND_BYTES,
+        CLIENT_ATTEMPT_RECEIVED_BYTES,
+        SERVER_STARTED_RPCS,
+        SERVER_RPC_DURATION,
+        SERVER_RPC_SEND_BYTES,
+        SERVER_RPC_RECEIVED_BYTES,
+    ]

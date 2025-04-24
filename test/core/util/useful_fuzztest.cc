@@ -14,9 +14,9 @@
 
 #include <limits>
 
-#include "src/core/util/useful.h"
-#include "gtest/gtest.h"
 #include "fuzztest/fuzztest.h"
+#include "gtest/gtest.h"
+#include "src/core/util/useful.h"
 
 namespace grpc_core {
 

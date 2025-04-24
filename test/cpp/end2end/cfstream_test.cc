@@ -34,6 +34,9 @@
 #include <random>
 #include <thread>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "gtest/gtest.h"
 #include "src/core/lib/iomgr/port.h"
 #include "src/core/util/backoff.h"
 #include "src/core/util/crash.h"
@@ -43,9 +46,6 @@
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/end2end/test_service_impl.h"
 #include "test/cpp/util/test_credentials_provider.h"
-#include "gtest/gtest.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
 
 #ifdef GRPC_CFSTREAM
 using grpc::ClientAsyncResponseReader;

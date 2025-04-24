@@ -18,8 +18,8 @@
 #include <set>
 #include <vector>
 
-#include "gtest/gtest.h"
 #include "fuzztest/fuzztest.h"
+#include "gtest/gtest.h"
 
 namespace grpc_core {
 

@@ -28,6 +28,7 @@
 #include <string>
 #include <utility>
 
+#include "absl/strings/string_view.h"
 #include "src/core/config/core_configuration.h"
 #include "src/core/credentials/call/call_credentials.h"
 #include "src/core/credentials/transport/channel_creds_registry.h"
@@ -42,7 +43,6 @@
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/time.h"
 #include "src/core/util/validation_errors.h"
-#include "absl/strings/string_view.h"
 
 namespace grpc_core {
 

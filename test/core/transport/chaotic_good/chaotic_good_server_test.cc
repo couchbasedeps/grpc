@@ -23,6 +23,12 @@
 #include <string>
 #include <utility>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "absl/strings/str_cat.h"
+#include "absl/time/time.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/ext/transport/chaotic_good/client/chaotic_good_connector.h"
 #include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/lib/channel/channel_args.h"
@@ -36,12 +42,6 @@
 #include "test/core/test_util/build.h"
 #include "test/core/test_util/port.h"
 #include "test/core/test_util/test_config.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
-#include "absl/strings/str_cat.h"
-#include "absl/time/time.h"
 
 namespace grpc_core {
 namespace chaotic_good {

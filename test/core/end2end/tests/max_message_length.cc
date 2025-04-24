@@ -21,10 +21,10 @@
 
 #include <string>
 
-#include "src/core/lib/channel/channel_args.h"
-#include "test/core/end2end/end2end_tests.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
+#include "src/core/lib/channel/channel_args.h"
+#include "test/core/end2end/end2end_tests.h"
 
 using testing::StartsWith;
 

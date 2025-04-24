@@ -26,19 +26,19 @@
 #include <string>
 #include <vector>
 
+#include "absl/status/status.h"
+#include "absl/status/statusor.h"
+#include "absl/strings/match.h"
+#include "absl/strings/str_cat.h"
+#include "absl/strings/string_view.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/lib/slice/slice.h"
 #include "src/core/tsi/transport_security.h"
 #include "src/core/tsi/transport_security_interface.h"
 #include "src/core/util/load_file.h"
 #include "test/core/test_util/test_config.h"
 #include "test/core/tsi/transport_security_test_lib.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "absl/status/status.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/match.h"
-#include "absl/strings/str_cat.h"
-#include "absl/strings/string_view.h"
 
 namespace grpc_core {
 namespace testing {
@@ -48,10 +48,8 @@ using ::testing::NotNull;
 using ::testing::TestWithParam;
 using ::testing::ValuesIn;
 
-const char* kValidCrl =
-    "test/core/tsi/test_creds/crl_data/crls/current.crl";
-const char* kCrlIssuer =
-    "test/core/tsi/test_creds/crl_data/ca.pem";
+const char* kValidCrl = "test/core/tsi/test_creds/crl_data/crls/current.crl";
+const char* kCrlIssuer = "test/core/tsi/test_creds/crl_data/ca.pem";
 const char* kModifiedSignature =
     "test/core/tsi/test_creds/crl_data/bad_crls/"
     "invalid_signature.crl";
@@ -65,10 +63,8 @@ const char* kIntermediateCrlIssuer =
 const char* kLeafCert =
     "test/core/tsi/test_creds/crl_data/"
     "leaf_signed_by_intermediate.pem";
-const char* kEvilCa =
-    "test/core/tsi/test_creds/crl_data/evil_ca.pem";
-const char* kCaWithAkid =
-    "test/core/tsi/test_creds/crl_data/ca_with_akid.pem";
+const char* kEvilCa = "test/core/tsi/test_creds/crl_data/evil_ca.pem";
+const char* kCaWithAkid = "test/core/tsi/test_creds/crl_data/ca_with_akid.pem";
 const char* kCrlWithAkid =
     "test/core/tsi/test_creds/crl_data/crl_with_akid.crl";
 

@@ -22,6 +22,12 @@
 #include <memory>
 #include <utility>
 
+#include "absl/log/check.h"
+#include "absl/status/statusor.h"
+#include "absl/strings/str_cat.h"
+#include "absl/strings/string_view.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "src/core/credentials/transport/security_connector.h"
 #include "src/core/tsi/ssl_transport_security.h"
 #include "src/core/tsi/transport_security.h"
@@ -30,12 +36,6 @@
 #include "test/core/test_util/test_config.h"
 #include "test/core/test_util/tls_utils.h"
 #include "test/core/tsi/transport_security_test_lib.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "absl/log/check.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/str_cat.h"
-#include "absl/strings/string_view.h"
 
 extern "C" {
 #include <openssl/crypto.h>
@@ -54,14 +54,10 @@ const char* kSslTsiTestCrlSupportedCrlDirMissingIntermediate =
 const char* kSslTsiTestCrlSupportedCrlDirMissingRoot =
     "test/core/tsi/test_creds/crl_data/crls_missing_root/";
 const char* kSslTsiTestFaultyCrlsDir = "bad_path/";
-const char* kRevokedKeyPath =
-    "test/core/tsi/test_creds/crl_data/revoked.key";
-const char* kRevokedCertPath =
-    "test/core/tsi/test_creds/crl_data/revoked.pem";
-const char* kValidKeyPath =
-    "test/core/tsi/test_creds/crl_data/valid.key";
-const char* kValidCertPath =
-    "test/core/tsi/test_creds/crl_data/valid.pem";
+const char* kRevokedKeyPath = "test/core/tsi/test_creds/crl_data/revoked.key";
+const char* kRevokedCertPath = "test/core/tsi/test_creds/crl_data/revoked.pem";
+const char* kValidKeyPath = "test/core/tsi/test_creds/crl_data/valid.key";
+const char* kValidCertPath = "test/core/tsi/test_creds/crl_data/valid.pem";
 
 const char* kRevokedIntermediateKeyPath =
     "test/core/tsi/test_creds/crl_data/"
@@ -69,8 +65,7 @@ const char* kRevokedIntermediateKeyPath =
 const char* kRevokedIntermediateCertPath =
     "test/core/tsi/test_creds/crl_data/"
     "leaf_and_intermediate_chain.pem";
-const char* kRootCrlPath =
-    "test/core/tsi/test_creds/crl_data/crls/current.crl";
+const char* kRootCrlPath = "test/core/tsi/test_creds/crl_data/crls/current.crl";
 const char* kIntermediateCrlPath =
     "test/core/tsi/test_creds/crl_data/crls/intermediate.crl";
 const char* kModifiedSignaturePath =

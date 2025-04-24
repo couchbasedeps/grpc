@@ -23,6 +23,8 @@
 
 #include <atomic>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
 #include "src/core/lib/iomgr/ev_posix.h"
 #include "src/core/lib/iomgr/port.h"
 #include "src/core/lib/surface/completion_queue.h"
@@ -31,8 +33,6 @@
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/microbenchmarks/helpers.h"
 #include "test/cpp/util/test_config.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
 
 struct grpc_pollset {
   gpr_mu mu;

@@ -25,9 +25,9 @@
 
 #include <memory>
 
-#include "test/core/test_util/test_config.h"
-#include "gtest/gtest.h"
 #include "absl/log/log.h"
+#include "gtest/gtest.h"
+#include "test/core/test_util/test_config.h"
 
 TEST(GrpcByteBufferReaderTest, TestReadOneSlice) {
   grpc_slice slice;

@@ -26,6 +26,8 @@
 
 #include <string>
 
+#include "absl/log/log.h"
+#include "gtest/gtest.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
@@ -33,8 +35,6 @@
 #include "test/core/test_util/port.h"
 #include "test/core/test_util/test_config.h"
 #include "test/core/test_util/tls_utils.h"
-#include "gtest/gtest.h"
-#include "absl/log/log.h"
 
 #define CA_CERT_PATH "src/core/tsi/test_creds/ca.pem"
 

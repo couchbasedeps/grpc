@@ -22,6 +22,8 @@
 
 #include <memory>
 
+#include "absl/status/statusor.h"
+#include "absl/strings/string_view.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/iomgr/iomgr_fwd.h"
 #include "src/core/resolver/endpoint_addresses.h"
@@ -34,8 +36,6 @@
 #include "src/core/xds/xds_client/lrs_client.h"
 #include "src/core/xds/xds_client/xds_client.h"
 #include "src/core/xds/xds_client/xds_transport.h"
-#include "absl/status/statusor.h"
-#include "absl/strings/string_view.h"
 
 namespace grpc_core {
 

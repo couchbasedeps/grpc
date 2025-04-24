@@ -27,6 +27,11 @@
 
 #include <utility>
 
+#include "absl/log/check.h"
+#include "absl/log/log.h"
+#include "absl/status/status.h"
+#include "absl/status/statusor.h"
+#include "absl/time/time.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/resolver/endpoint_addresses.h"
@@ -36,11 +41,6 @@
 #include "src/core/util/ref_counted_ptr.h"
 #include "test/core/end2end/cq_verifier.h"
 #include "test/core/test_util/test_config.h"
-#include "absl/log/check.h"
-#include "absl/log/log.h"
-#include "absl/status/status.h"
-#include "absl/status/statusor.h"
-#include "absl/time/time.h"
 
 void run_test(bool wait_for_ready) {
   LOG(INFO) << "TEST: wait_for_ready=" << wait_for_ready;
