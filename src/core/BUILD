@@ -1023,6 +1023,7 @@ grpc_cc_library(
         "poll",
         "promise_factory",
         "promise_trace",
+        "status_flag",
         "//:gpr",
         "//:gpr_platform",
     ],
