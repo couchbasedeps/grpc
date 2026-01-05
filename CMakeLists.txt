@@ -14016,6 +14016,7 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     test/core/end2end/end2end_chaotic_good_config.cc
     test/core/end2end/end2end_test_suites.cc
     test/core/end2end/end2end_tests.cc
+    test/core/end2end/fixtures/http_common_secure_fixtures.cc
     test/core/end2end/fixtures/http_proxy_fixture.cc
     test/core/end2end/fixtures/local_util.cc
     test/core/end2end/fixtures/proxy.cc
@@ -14121,6 +14122,7 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     test/core/end2end/end2end_chaotic_good_config.cc
     test/core/end2end/end2end_test_suites.cc
     test/core/end2end/end2end_tests.cc
+    test/core/end2end/fixtures/http_common_secure_fixtures.cc
     test/core/end2end/fixtures/http_proxy_fixture.cc
     test/core/end2end/fixtures/local_util.cc
     test/core/end2end/fixtures/proxy.cc
@@ -14313,6 +14315,7 @@ add_executable(end2end_http2_no_logging_test
   test/core/end2end/end2end_http2_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -14416,6 +14419,7 @@ add_executable(end2end_http2_security_no_logging_test
   test/core/end2end/end2end_http2_security_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -14519,6 +14523,7 @@ add_executable(end2end_http2_security_test
   test/core/end2end/end2end_http2_security_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -14710,6 +14715,7 @@ add_executable(end2end_http2_test
   test/core/end2end/end2end_http2_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -14901,6 +14907,7 @@ add_executable(end2end_inproc_no_logging_test
   test/core/end2end/end2end_inproc_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -15004,6 +15011,7 @@ add_executable(end2end_inproc_test
   test/core/end2end/end2end_inproc_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -15195,6 +15203,7 @@ add_executable(end2end_ph2_no_logging_test
   test/core/end2end/end2end_ph2_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -15298,6 +15307,7 @@ add_executable(end2end_ph2_test
   test/core/end2end/end2end_ph2_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -15489,6 +15499,7 @@ add_executable(end2end_posix_no_logging_test
   test/core/end2end/end2end_posix_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -15592,6 +15603,7 @@ add_executable(end2end_posix_test
   test/core/end2end/end2end_posix_config.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
@@ -19865,6 +19877,7 @@ add_executable(h2_ssl_cert_test
   test/core/end2end/data/test_root_cert.cc
   test/core/end2end/end2end_test_suites.cc
   test/core/end2end/end2end_tests.cc
+  test/core/end2end/fixtures/http_common_secure_fixtures.cc
   test/core/end2end/fixtures/http_proxy_fixture.cc
   test/core/end2end/fixtures/local_util.cc
   test/core/end2end/fixtures/proxy.cc
