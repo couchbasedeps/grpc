@@ -165,6 +165,7 @@ grpc_cc_library(
         srcs = [
             "end2end_test_suites.cc",
             "end2end_tests.cc",
+            "fixtures/http_common_secure_fixtures.cc",
             "fixtures/local_util.cc",
         ],
         hdrs = [
@@ -173,6 +174,7 @@ grpc_cc_library(
             "fixtures/h2_ssl_cred_reload_fixture.h",
             "fixtures/h2_ssl_tls_common.h",
             "fixtures/h2_tls_common.h",
+            "fixtures/http_common_secure_fixtures.h",
             "fixtures/inproc_fixture.h",
             "fixtures/local_util.h",
             "fixtures/secure_fixture.h",
