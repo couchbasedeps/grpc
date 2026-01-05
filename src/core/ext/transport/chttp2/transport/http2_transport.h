@@ -47,7 +47,7 @@ namespace http2 {
   DLOG_IF(INFO, GRPC_TRACE_FLAG_ENABLED(http2_ph2_transport))
 
 #define GRPC_HTTP2_COMMON_DLOG \
-DLOG_IF(INFO, GRPC_TRACE_FLAG_ENABLED(http2_ph2_transport))
+  DLOG_IF(INFO, GRPC_TRACE_FLAG_ENABLED(http2_ph2_transport))
 
 // Timeout for getting an ack back on settings changes
 #define GRPC_ARG_SETTINGS_TIMEOUT "grpc.http2.settings_timeout"
@@ -64,7 +64,7 @@ enum class HttpStreamState : uint8_t {
   kClosed,
 };
 
-void ReadSettingsFromChannelArgs(const grpc_core::ChannelArgs& channel_args,
+void ReadSettingsFromChannelArgs(const ChannelArgs& channel_args,
                                  Http2Settings& settings, const bool is_client);
 
 void InitLocalSettings(Http2Settings& settings, const bool is_client);
