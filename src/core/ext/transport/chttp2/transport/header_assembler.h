@@ -183,10 +183,10 @@ class HeaderAssembler {
                                  : HPackParser::LogInfo::Type::kTrailers,
                              is_client});
     for (size_t i = 0; i < state_->buffer_.Count(); i++) {
-      absl::Status result = parser.Parse(
-          state_->buffer_.c_slice_at(i), i == state_->buffer_.Count() - 1,
-          SharedBitGen(),
-          /*call_tracer=*/nullptr);
+      absl::Status result =
+          parser.Parse(state_->buffer_.c_slice_at(i),
+                       i == state_->buffer_.Count() - 1, SharedBitGen(),
+                       /*call_tracer=*/nullptr);
       if (GPR_UNLIKELY(!result.ok())) {
         state_->Cleanup();
         LOG(ERROR) << "Connection Error: " << kAssemblerHpackError;

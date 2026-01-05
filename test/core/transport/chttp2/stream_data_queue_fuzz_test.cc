@@ -289,7 +289,7 @@ YODEL_TEST(StreamDataQueueFuzzTest, EnqueueDequeueMultiParty) {
   StreamDataQueue<ClientMetadataHandle> stream_data_queue(
       /*is_client=*/true,
       /*queue_size=*/queue_size);
-  stream_data_queue.Initialize(stream_id,  /*allow_true_binary_metadata=*/true);
+  stream_data_queue.Initialize(stream_id, /*allow_true_binary_metadata=*/true);
   std::vector<MessageHandle> messages_to_be_sent = TestMessages(num_messages);
   std::vector<MessageHandle> messages_copy = TestMessages(num_messages);
   std::vector<MessageHandle> dequeued_messages;
