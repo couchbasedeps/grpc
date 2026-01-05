@@ -67,7 +67,6 @@
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/sync.h"
 
-
 namespace grpc_core {
 namespace http2 {
 
