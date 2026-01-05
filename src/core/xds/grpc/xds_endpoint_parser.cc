@@ -227,10 +227,9 @@ struct ParsedLocality {
 };
 
 struct StringLessThan {
-  bool operator()(const std::string& str1,
-                  const std::string& str2) const {
-    auto uri_a = grpc_core::URI::Parse(str1);
-    auto uri_b = grpc_core::URI::Parse(str2);
+  bool operator()(const std::string& str1, const std::string& str2) const {
+    auto uri_a = URI::Parse(str1);
+    auto uri_b = URI::Parse(str2);
     if (!uri_a.ok() || !uri_b.ok()) {
       return str1 < str2;
     }
@@ -243,8 +242,7 @@ struct StringLessThan {
     return memcmp(addr_a.addr, addr_b.addr, addr_a.len) < 0;
   }
 };
-using AddressSet =
-    std::set<std::string, StringLessThan>;
+using AddressSet = std::set<std::string, StringLessThan>;
 
 std::optional<ParsedLocality> LocalityParse(
     const XdsResourceType::DecodeContext& context,
@@ -305,8 +303,8 @@ std::optional<ParsedLocality> LocalityParse(
       for (const auto& address : endpoint->addresses()) {
         bool inserted = address_set->insert(address).second;
         if (!inserted) {
-          errors->AddError(absl::StrCat(
-              "duplicate endpoint address \"", address, "\""));
+          errors->AddError(
+              absl::StrCat("duplicate endpoint address \"", address, "\""));
         }
       }
       parsed_locality.locality.endpoints.push_back(std::move(*endpoint));

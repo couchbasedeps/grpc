@@ -58,10 +58,10 @@
 #include <address_sorting/address_sorting.h>
 
 #include "src/core/config/config_vars.h"
+#include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/iomgr/resolve_address.h"
 #include "src/core/lib/transport/error_utils.h"
-#include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/load_balancing/grpclb/grpclb_balancer_addresses.h"
 #include "src/core/resolver/dns/c_ares/grpc_ares_wrapper.h"
 #include "src/core/resolver/endpoint_addresses.h"
@@ -531,7 +531,7 @@ class AresDNSResolver final : public DNSResolver {
         resolved_addresses.reserve(addresses_->size());
         for (const auto& server_address : *addresses_) {
           grpc_resolved_address resolved_address;
-          auto uri = grpc_core::URI::Parse(server_address.address());
+          auto uri = URI::Parse(server_address.address());
           if (!uri.ok() || !grpc_parse_uri(*uri, &resolved_address)) {
             LOG(ERROR) << "Failed to parse address: "
                        << server_address.address();
@@ -590,7 +590,7 @@ class AresDNSResolver final : public DNSResolver {
       if (balancer_addresses_ != nullptr) {
         resolved_addresses.reserve(balancer_addresses_->size());
         for (const auto& server_address : *balancer_addresses_) {
-          auto uri = grpc_core::URI::Parse(server_address.address());
+          auto uri = URI::Parse(server_address.address());
           grpc_resolved_address resolved_address;
           if (!uri.ok() || !grpc_parse_uri(*uri, &resolved_address)) {
             LOG(ERROR) << "Failed to parse address: "

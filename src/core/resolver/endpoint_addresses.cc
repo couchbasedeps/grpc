@@ -42,8 +42,8 @@ EndpointAddresses::EndpointAddresses(const std::string& address,
                                      const ChannelArgs& args)
     : addresses_(1, address), args_(args) {}
 
-EndpointAddresses::EndpointAddresses(
-    std::vector<std::string> addresses, const ChannelArgs& args)
+EndpointAddresses::EndpointAddresses(std::vector<std::string> addresses,
+                                     const ChannelArgs& args)
     : addresses_(std::move(addresses)), args_(args) {
   GRPC_CHECK(!addresses_.empty());
 }
@@ -88,9 +88,8 @@ std::string EndpointAddresses::ToString() const {
   return absl::StrJoin(parts, " ");
 }
 
-bool StringLessThan::operator()(
-    const std::string& str1,
-    const std::string& str2) const {
+bool StringLessThan::operator()(const std::string& str1,
+                                const std::string& str2) const {
   return str1 < str2;
 }
 

@@ -491,7 +491,7 @@ class ClientChannel::ClientChannelControlHelper
         args, per_address_args, client_channel_->subchannel_pool_,
         client_channel_->default_authority_);
     // Create subchannel.
-    auto uri = grpc_core::URI::Parse(address);
+    auto uri = URI::Parse(address);
     if (!uri.ok()) {
       LOG(ERROR) << "Failed to parse address URI: " << address;
       return nullptr;

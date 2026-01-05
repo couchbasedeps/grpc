@@ -14,9 +14,7 @@
 // limitations under the License.
 //
 
-#include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/load_balancing/pick_first/pick_first.h"
-#include "src/core/util/uri.h"
 
 #include <grpc/event_engine/event_engine.h>
 #include <grpc/impl/channel_arg_names.h>
@@ -34,6 +32,7 @@
 #include <vector>
 
 #include "src/core/config/core_configuration.h"
+#include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/lib/address_utils/sockaddr_utils.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/debug/trace.h"
@@ -58,6 +57,7 @@
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/shared_bit_gen.h"
 #include "src/core/util/time.h"
+#include "src/core/util/uri.h"
 #include "src/core/util/useful.h"
 #include "src/core/util/work_serializer.h"
 #include "absl/algorithm/container.h"
@@ -484,7 +484,7 @@ void PickFirst::AttemptToConnectUsingLatestUpdateArgsLocked() {
 }
 
 std::string GetAddressFamily(absl::string_view address_uri) {
-  auto uri = grpc_core::URI::Parse(address_uri);
+  auto uri = URI::Parse(address_uri);
   if (!uri.ok()) {
     return "other";
   }

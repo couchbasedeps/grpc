@@ -512,17 +512,17 @@ class LoadBalancingPolicyTest : public ::testing::Test {
     }
 
     RefCountedPtr<SubchannelInterface> CreateSubchannel(
-        const std::string& address,
-        const ChannelArgs& /*per_address_args*/,
+        const std::string& address, const ChannelArgs& /*per_address_args*/,
         const ChannelArgs& args) override {
       // TODO(roth): Need to use per_address_args here.
-      SubchannelKey key(MakeAddress(address), args.RemoveAllKeysWithPrefix(
-                                              GRPC_ARG_NO_SUBCHANNEL_PREFIX));
+      SubchannelKey key(
+          MakeAddress(address),
+          args.RemoveAllKeysWithPrefix(GRPC_ARG_NO_SUBCHANNEL_PREFIX));
       auto it = test_->subchannel_pool_.find(key);
       if (it == test_->subchannel_pool_.end()) {
         it = test_->subchannel_pool_
                  .emplace(std::piecewise_construct, std::forward_as_tuple(key),
-                          std::forward_as_tuple(std::move(address), test_))
+                          std::forward_as_tuple(address, test_))
                  .first;
       }
       return it->second.CreateSubchannel();

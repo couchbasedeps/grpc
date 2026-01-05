@@ -345,8 +345,8 @@ class XdsOverrideHostLb final : public LoadBalancingPolicy {
               std::move(xds_override_host_policy)) {}
 
     RefCountedPtr<SubchannelInterface> CreateSubchannel(
-        const std::string& address,
-        const ChannelArgs& per_address_args, const ChannelArgs& args) override;
+        const std::string& address, const ChannelArgs& per_address_args,
+        const ChannelArgs& args) override;
     void UpdateState(grpc_connectivity_state state, const absl::Status& status,
                      RefCountedPtr<SubchannelPicker> picker) override;
   };
@@ -805,7 +805,7 @@ void XdsOverrideHostLb::UpdateAddressMap(
     std::vector<std::string> addresses;
     addresses.reserve(endpoint.addresses().size());
     for (const auto& address : endpoint.addresses()) {
-      addresses.push_back(std::move(address));
+      addresses.push_back(address);
     }
     absl::Span<const std::string> addresses_span = addresses;
     for (size_t i = 0; i < addresses.size(); ++i) {
@@ -873,8 +873,7 @@ void XdsOverrideHostLb::UpdateAddressMap(
 
 RefCountedPtr<XdsOverrideHostLb::SubchannelWrapper>
 XdsOverrideHostLb::AdoptSubchannel(
-    const std::string& address,
-    RefCountedPtr<SubchannelInterface> subchannel) {
+    const std::string& address, RefCountedPtr<SubchannelInterface> subchannel) {
   auto wrapper = MakeRefCounted<SubchannelWrapper>(
       std::move(subchannel), RefAsSubclass<XdsOverrideHostLb>());
   // Drop ref to previously owned subchannel (if any) after releasing

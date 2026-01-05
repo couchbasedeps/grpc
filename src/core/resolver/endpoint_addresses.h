@@ -83,9 +83,7 @@ class EndpointAddresses final {
   // TODO(roth): Remove when all callers have been updated.
   const std::string& address() const { return addresses_[0]; }
 
-  const std::vector<std::string>& addresses() const {
-    return addresses_;
-  }
+  const std::vector<std::string>& addresses() const { return addresses_; }
   const ChannelArgs& args() const { return args_; }
 
   // TODO(ctiller): Prior to making this a public API we should ensure that the
@@ -101,14 +99,12 @@ class EndpointAddresses final {
 using EndpointAddressesList = std::vector<EndpointAddresses>;
 
 struct StringLessThan {
-  bool operator()(const std::string& str1,
-                  const std::string& str2) const;
+  bool operator()(const std::string& str1, const std::string& str2) const;
 };
 
 class EndpointAddressSet final {
  public:
-  explicit EndpointAddressSet(
-      const std::vector<std::string>& addresses)
+  explicit EndpointAddressSet(const std::vector<std::string>& addresses)
       : addresses_(addresses.begin(), addresses.end()) {}
 
   bool operator==(const EndpointAddressSet& other) const;
