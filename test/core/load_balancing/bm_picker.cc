@@ -139,8 +139,8 @@ class BenchmarkHelper : public std::enable_shared_from_this<BenchmarkHelper> {
     explicit LbHelper(BenchmarkHelper* helper) : helper_(helper) {}
 
     RefCountedPtr<SubchannelInterface> CreateSubchannel(
-        const std::string& address,
-        const ChannelArgs& per_address_args, const ChannelArgs& args) override {
+        const std::string& address, const ChannelArgs& per_address_args,
+        const ChannelArgs& args) override {
       return MakeRefCounted<SubchannelFake>(helper_);
     }
 

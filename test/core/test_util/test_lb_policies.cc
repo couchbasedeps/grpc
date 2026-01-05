@@ -340,8 +340,8 @@ class AddressTestLoadBalancingPolicy : public ForwardingLoadBalancingPolicy {
           cb_(std::move(cb)) {}
 
     RefCountedPtr<SubchannelInterface> CreateSubchannel(
-        const std::string& address,
-        const ChannelArgs& per_address_args, const ChannelArgs& args) override {
+        const std::string& address, const ChannelArgs& per_address_args,
+        const ChannelArgs& args) override {
       cb_(EndpointAddresses(address, per_address_args));
       return parent_helper()->CreateSubchannel(address, per_address_args, args);
     }
@@ -511,8 +511,8 @@ class OobBackendMetricTestLoadBalancingPolicy
         : ParentOwningDelegatingChannelControlHelper(std::move(parent)) {}
 
     RefCountedPtr<SubchannelInterface> CreateSubchannel(
-        const std::string& address,
-        const ChannelArgs& per_address_args, const ChannelArgs& args) override {
+        const std::string& address, const ChannelArgs& per_address_args,
+        const ChannelArgs& args) override {
       auto subchannel =
           parent_helper()->CreateSubchannel(address, per_address_args, args);
       subchannel->AddDataWatcher(MakeOobBackendMetricWatcher(

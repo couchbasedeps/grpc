@@ -34,6 +34,7 @@
 
 #include "src/core/client_channel/client_channel_internal.h"
 #include "src/core/config/core_configuration.h"
+#include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/lib/address_utils/sockaddr_utils.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/debug/trace.h"
@@ -69,7 +70,6 @@
 #include "absl/status/statusor.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
-#include "src/core/lib/address_utils/parse_address.h"
 
 namespace grpc_core {
 
@@ -455,10 +455,10 @@ RingHash::Ring::Ring(RingHash* ring_hash, RingHashLbConfig* config) {
     if (hash_key.has_value()) {
       endpoint_weight.hash_key = std::string(*hash_key);
     } else {
-      auto uri = grpc_core::URI::Parse(endpoint.addresses().front());
+      auto uri = URI::Parse(endpoint.addresses().front());
       CHECK(uri.ok()) << "Failed to parse URI: " << endpoint.addresses().front()
                       << " with status: " << uri.status();
-                      grpc_resolved_address resolved_addr;
+      grpc_resolved_address resolved_addr;
       CHECK(grpc_parse_uri(*uri, &resolved_addr))
           << "Failed to convert URI to resolved address: "
           << endpoint.addresses().front();

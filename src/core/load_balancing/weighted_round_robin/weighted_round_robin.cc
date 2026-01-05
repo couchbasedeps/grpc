@@ -265,8 +265,7 @@ class WeightedRoundRobin final : public LoadBalancingPolicy {
       };
 
       RefCountedPtr<SubchannelInterface> CreateSubchannel(
-          const std::string& address,
-          const ChannelArgs& per_address_args,
+          const std::string& address, const ChannelArgs& per_address_args,
           const ChannelArgs& args) override;
 
       // Called when the child policy reports a connectivity state update.

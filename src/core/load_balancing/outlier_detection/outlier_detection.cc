@@ -379,21 +379,21 @@ class OutlierDetectionLb final : public LoadBalancingPolicy {
     bool counting_enabled_;
   };
 
-class Helper final
-    : public ParentOwningDelegatingChannelControlHelper<OutlierDetectionLb> {
- public:
-  explicit Helper(RefCountedPtr<OutlierDetectionLb> outlier_detection_policy)
-      : ParentOwningDelegatingChannelControlHelper(
-            std::move(outlier_detection_policy)) {}
+  class Helper final
+      : public ParentOwningDelegatingChannelControlHelper<OutlierDetectionLb> {
+   public:
+    explicit Helper(RefCountedPtr<OutlierDetectionLb> outlier_detection_policy)
+        : ParentOwningDelegatingChannelControlHelper(
+              std::move(outlier_detection_policy)) {}
 
-  RefCountedPtr<SubchannelInterface> CreateSubchannel(
-      const std::string& address, const ChannelArgs& per_address_args,
-      const ChannelArgs& args) override;
-  void UpdateState(grpc_connectivity_state state, const absl::Status& status,
-                   // ignored.  The child will be re-created and will report
-                   // its own new picker.
-                   RefCountedPtr<SubchannelPicker> picker) override;
-};
+    RefCountedPtr<SubchannelInterface> CreateSubchannel(
+        const std::string& address, const ChannelArgs& per_address_args,
+        const ChannelArgs& args) override;
+    void UpdateState(grpc_connectivity_state state, const absl::Status& status,
+                     // ignored.  The child will be re-created and will report
+                     // its own new picker.
+                     RefCountedPtr<SubchannelPicker> picker) override;
+  };
 
   class EjectionTimer final : public InternallyRefCounted<EjectionTimer> {
    public:
@@ -435,8 +435,7 @@ class Helper final
   RefCountedPtr<SubchannelPicker> picker_;
   std::map<EndpointAddressSet, RefCountedPtr<EndpointState>>
       endpoint_state_map_;
-  std::map<std::string, RefCountedPtr<SubchannelState>,
-           StringLessThan>
+  std::map<std::string, RefCountedPtr<SubchannelState>, StringLessThan>
       subchannel_state_map_;
   OrphanablePtr<EjectionTimer> ejection_timer_;
 };
@@ -746,8 +745,9 @@ OrphanablePtr<LoadBalancingPolicy> OutlierDetectionLb::CreateChildPolicyLocked(
   LoadBalancingPolicy::Args lb_policy_args;
   lb_policy_args.work_serializer = work_serializer();
   lb_policy_args.args = args;
-  lb_policy_args.channel_control_helper = std::make_unique<OutlierDetectionLb::Helper>(
-      RefAsSubclass<OutlierDetectionLb>(DEBUG_LOCATION, "Helper"));
+  lb_policy_args.channel_control_helper =
+      std::make_unique<OutlierDetectionLb::Helper>(
+          RefAsSubclass<OutlierDetectionLb>(DEBUG_LOCATION, "Helper"));
   OrphanablePtr<LoadBalancingPolicy> lb_policy =
       MakeOrphanable<ChildPolicyHandler>(std::move(lb_policy_args),
                                          &outlier_detection_lb_trace);

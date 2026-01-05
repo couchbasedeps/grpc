@@ -906,7 +906,7 @@ class ClientChannelFilter::ClientChannelControlHelper final
         args, per_address_args, chand_->subchannel_pool_,
         chand_->default_authority_);
     // Create subchannel.
-    auto uri = grpc_core::URI::Parse(address_uri);
+    auto uri = URI::Parse(address_uri);
     if (!uri.ok()) {
       LOG(ERROR) << "Failed to parse address URI: " << address_uri;
       return nullptr;

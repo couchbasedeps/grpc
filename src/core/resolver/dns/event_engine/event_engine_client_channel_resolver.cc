@@ -419,8 +419,7 @@ void EventEngineClientChannelDNSResolver::EventEngineDNSRequestWrapper::
         errors_.AddError(uri.status().message());
         continue;
       }
-      balancer_addresses_.emplace_back(*uri,
-                                       srv_channel_args);
+      balancer_addresses_.emplace_back(*uri, srv_channel_args);
     }
   }
   result = OnResolvedLocked();

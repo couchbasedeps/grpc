@@ -1373,10 +1373,9 @@ TEST_F(RlsEnd2endTest, ConnectivityStateTransientFailure) {
   EXPECT_EQ(GRPC_CHANNEL_IDLE, channel_->GetState(/*try_to_connect=*/false));
   rls_server_->service_.SetResponse(BuildRlsRequest({{kTestKey, kTestValue}}),
                                     BuildRlsResponse({"invalid_target"}));
-  CheckRpcSendFailure(
-      DEBUG_LOCATION, StatusCode::UNAVAILABLE,
-      "empty address list",
-      RpcOptions().set_metadata({{"key1", kTestValue}}));
+  CheckRpcSendFailure(DEBUG_LOCATION, StatusCode::UNAVAILABLE,
+                      "empty address list",
+                      RpcOptions().set_metadata({{"key1", kTestValue}}));
   EXPECT_EQ(rls_server_->service_.request_count(), 1);
   EXPECT_EQ(rls_server_->service_.response_count(), 1);
   EXPECT_EQ(GRPC_CHANNEL_TRANSIENT_FAILURE,
