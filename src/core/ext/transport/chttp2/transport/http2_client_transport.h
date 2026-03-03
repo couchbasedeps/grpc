@@ -342,6 +342,12 @@ class Http2ClientTransport final : public ClientTransport,
   void ActOnFlowControlAction(const chttp2::FlowControlAction& action,
                               Stream* stream);
 
+  // On receiving an increase in the initial_window size, update the writability
+  // for all active streams. This may un-stall streams that are stalled due to
+  // lack of flow control tokens. This is needed as the stream flow control
+  // tokens are calculated based on the initial window size.
+  absl::Status UpdateAllStreamsWritability();
+
   // Returns the number of active streams. A stream is removed from the `active`
   // list once both client and server agree to close the stream. The count of
   // stream_list_(even though stream list represents streams open for reads)
