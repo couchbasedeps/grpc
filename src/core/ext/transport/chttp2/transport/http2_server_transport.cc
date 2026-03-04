@@ -2118,7 +2118,7 @@ uint32_t Http2ServerTransport::GoawayInterfaceImpl::GetLastAcceptedStreamId() {
 // Constructor, Destructor etc.
 
 Http2ServerTransport::Http2ServerTransport(
-    PromiseEndpoint endpoint, GRPC_UNUSED const ChannelArgs& channel_args,
+    PromiseEndpoint endpoint, const ChannelArgs& channel_args,
     std::shared_ptr<EventEngine> event_engine)
     : channelz::DataSource(http2::CreateChannelzSocketNode(
           endpoint.GetEventEngineEndpoint(), channel_args)),
