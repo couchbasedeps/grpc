@@ -15,9 +15,8 @@
 #include "test/cpp/qps/session_util.h"
 
 #include <grpcpp/impl/generic_stub_session.h>
-
-#include "grpcpp/impl/server_callback_handlers.h"
-#include "grpcpp/virtual_channel.h"
+#include <grpcpp/impl/server_callback_handlers.h>
+#include <grpcpp/virtual_channel.h>
 
 #include <atomic>
 
@@ -70,7 +69,8 @@ OuterSessionService::OuterSessionService(grpc::Service* inner_service) {
   auto* method = new grpc::internal::RpcServiceMethod(
       "/grpc.testing.BenchmarkService/ConnectSession",
       grpc::internal::RpcMethod::SESSION_RPC,
-      new grpc::experimental::internal::CallbackSessionHandler<grpc::testing::SimpleRequest>(
+      new grpc::experimental::internal::CallbackSessionHandler<
+          grpc::testing::SimpleRequest>(
           [](grpc::CallbackServerContext* /*context*/,
              const grpc::testing::SimpleRequest* /*request*/) {
             return new SessionReactor();

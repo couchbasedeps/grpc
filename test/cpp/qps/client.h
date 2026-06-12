@@ -34,8 +34,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include "absl/log/check.h"
-
 #include "src/core/ext/transport/chaotic_good/chaotic_good.h"
 #include "src/core/transport/endpoint_transport.h"
 #include "src/core/util/crash.h"
@@ -50,6 +48,7 @@
 #include "test/cpp/qps/usage_timer.h"
 #include "test/cpp/util/create_test_channel.h"
 #include "test/cpp/util/test_credentials_provider.h"
+#include "absl/log/check.h"
 #include "absl/log/log.h"
 #include "absl/memory/memory.h"
 #include "absl/strings/match.h"
