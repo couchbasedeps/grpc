@@ -219,8 +219,9 @@ class Arena final : public RefCounted<Arena, NonPolymorphicRefCount,
   static RefCountedPtr<Arena> Create(size_t initial_size,
                                      RefCountedPtr<ArenaFactory> arena_factory);
 
-  static RefCountedPtr<Arena> CreateAt(void* block, size_t initial_size,
-                                       RefCountedPtr<ArenaFactory> arena_factory) {
+  static RefCountedPtr<Arena> CreateAt(
+      void* block, size_t initial_size,
+      RefCountedPtr<ArenaFactory> arena_factory) {
     return RefCountedPtr<Arena>(
         new (block) Arena(initial_size, std::move(arena_factory)));
   }
