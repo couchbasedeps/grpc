@@ -811,7 +811,7 @@ TEST_F(Http2ReadContextTest, SetAndGetFrameHeader) {
   // Purpose: Verify that SetCurrentFrameHeader stores header attributes
   // correctly. Assertions: GetCurrentFrameHeader returns the exact frame header
   // that was set.
-  ::grpc_core::util::testing::MockPromiseEndpoint mock_endpoint(1234);
+  util::testing::MockPromiseEndpoint mock_endpoint(1234);
   ReadContext context(/*max_new_streams_per_read_cycle=*/32u,
                       mock_endpoint.promise_endpoint, true);
   Http2FrameHeader header;
@@ -842,7 +842,7 @@ TEST_F(Http2ReadContextTest, ReadCycleFramesLimits) {
       "TestFramesLimits",
       [&was_pending_under_limit,
        &was_pending_at_limit]() -> Poll<absl::Status> {
-        ::grpc_core::util::testing::MockPromiseEndpoint mock_endpoint(1234);
+        util::testing::MockPromiseEndpoint mock_endpoint(1234);
         ReadContext read_context(/*max_new_streams_per_read_cycle=*/32u,
                                  mock_endpoint.promise_endpoint, true);
         const Http2FrameHeader header = {
