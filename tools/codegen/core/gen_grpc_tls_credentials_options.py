@@ -250,7 +250,9 @@ _DATA_MEMBERS = [
         setter_move_semantics=True,
         test_name="DifferentKeyExchangeGroups",
         test_value_1="{grpc_tls_key_exchange_group::GRPC_TLS_GROUP_X25519}",
-        test_value_2=("{grpc_tls_key_exchange_group::GRPC_TLS_GROUP_X25519_MLKEM768}"),
+        test_value_2=(
+            "{grpc_tls_key_exchange_group::GRPC_TLS_GROUP_X25519_MLKEM768}"
+        ),
     ),
     DataMember(
         name="exported_keying_material_label",
