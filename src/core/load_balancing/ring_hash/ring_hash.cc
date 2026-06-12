@@ -420,9 +420,10 @@ RingHash::PickResult RingHash::Picker::Pick(PickArgs args) {
         requested_connection = true;
       }
     }
-    if (requested_connection)
+    if (requested_connection) {
       return PickResult::Queue(
           "RingHash: endpoint not ready. Using random hash.");
+    }
   }
   std::string message = absl::StrCat(
       "ring hash cannot find a connected endpoint; first failure: ",
