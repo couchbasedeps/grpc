@@ -38,7 +38,9 @@ namespace testing {
 class BenchmarkCallbackServiceImpl final
     : public BenchmarkService::CallbackService {
  public:
-  BenchmarkCallbackServiceImpl() { grpc::experimental::SetVirtualService(this); }
+  BenchmarkCallbackServiceImpl() {
+    grpc::experimental::SetVirtualService(this);
+  }
 
   grpc::ServerUnaryReactor* UnaryCall(grpc::CallbackServerContext* context,
                                       const SimpleRequest* request,
