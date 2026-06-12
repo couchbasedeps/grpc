@@ -16,6 +16,7 @@
 // tools/codegen/core/gen_huffman_decompressor.cc
 
 #include "src/core/ext/transport/chttp2/transport/decode_huff.h"
+
 #include <grpc/support/port_platform.h>
 namespace grpc_core {
 const uint8_t HuffDecoderCommon::table2_0_emit_[10] = {
