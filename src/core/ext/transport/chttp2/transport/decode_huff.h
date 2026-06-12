@@ -408,6 +408,7 @@ class HuffDecoder : public HuffDecoderCommon {
     }
     return ok_;
   }
+
  private:
   GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION bool RefillTo14() {
     switch (buffer_len_) {
@@ -1525,4 +1526,4 @@ class HuffDecoder : public HuffDecoderCommon {
   bool done_ = false;
 };
 }  // namespace grpc_core
-#endif
+#endif  // GRPC_SRC_CORE_EXT_TRANSPORT_CHTTP2_TRANSPORT_DECODE_HUFF_H
