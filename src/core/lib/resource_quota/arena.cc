@@ -29,8 +29,7 @@
 #include "absl/log/log.h"
 namespace grpc_core {
 
-namespace {
-}  // namespace
+namespace {}  // namespace
 
 size_t Arena::RoundedInitialSize(size_t initial_size) {
   size_t base_size = Arena::ArenaOverhead() +
