@@ -1140,9 +1140,8 @@ auto Server::MatchAndPublishCall(CallHandler call_handler) {
           auto* rc = mr.TakeCall();
           rc->Complete(std::move(std::get<0>(r)), *md);
           RefCountedPtr<Arena> parent_arena;
-          grpc_core::Arena* raw_arena =
-              channel_args_.GetPointer<grpc_core::Arena>(
-                  GRPC_ARG_SERVER_INTERNAL_PARENT_CALL_ARENA);
+          Arena* raw_arena = channel_args_.GetPointer<Arena>(
+              GRPC_ARG_SERVER_INTERNAL_PARENT_CALL_ARENA);
           if (raw_arena != nullptr) {
             parent_arena = raw_arena->Ref();
           }
