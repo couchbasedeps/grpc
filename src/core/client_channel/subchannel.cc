@@ -877,7 +877,9 @@ void OldSubchannel::OnRetryTimerLocked() {
 }
 
 void OldSubchannel::StartConnectingLocked() {
-  LOG(ERROR) << "[RETRY_DBG] OldSubchannel::StartConnectingLocked to " << grpc_sockaddr_to_uri(&address_for_connect_).value_or("<unknown>");
+  LOG(ERROR)
+      << "[RETRY_DBG] OldSubchannel::StartConnectingLocked to "
+      << grpc_sockaddr_to_uri(&address_for_connect_).value_or("<unknown>");
   // Set next attempt time.
   const Timestamp now = Timestamp::Now();
   const Timestamp min_deadline = now + min_connect_timeout_;
@@ -2124,7 +2126,9 @@ void NewSubchannel::OnRetryTimerLocked() {
 }
 
 void NewSubchannel::StartConnectingLocked() {
-  LOG(ERROR) << "[RETRY_DBG] NewSubchannel::StartConnectingLocked to " << grpc_sockaddr_to_uri(&address_for_connect_).value_or("<unknown>");
+  LOG(ERROR)
+      << "[RETRY_DBG] NewSubchannel::StartConnectingLocked to "
+      << grpc_sockaddr_to_uri(&address_for_connect_).value_or("<unknown>");
   // Set next attempt time.
   const Timestamp now = Timestamp::Now();
   const Timestamp min_deadline = now + min_connect_timeout_;
